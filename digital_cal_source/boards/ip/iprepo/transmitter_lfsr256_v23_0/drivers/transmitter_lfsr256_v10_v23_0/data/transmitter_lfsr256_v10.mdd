@@ -1,0 +1,8 @@
+OPTION psf_version = 2.1;
+BEGIN driver transmitter_lfsr256_v10
+ OPTION supported_peripherals = (transmitter_lfsr256_v10_v23_0);
+ OPTION driver_state = ACTIVE;
+ OPTION copyfiles = all;
+ OPTION name = transmitter_lfsr256_v10;
+ OPTION version = 23.0;
+END driver

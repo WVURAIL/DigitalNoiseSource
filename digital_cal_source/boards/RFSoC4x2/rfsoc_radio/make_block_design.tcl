@@ -1,0 +1,17 @@
+set overlay_name "block_design"
+set design_name "rfsoc_radio"
+set iprepo_dir ./../../ip/iprepo
+
+# Create project 
+create_project ${overlay_name} ./${overlay_name} -part xczu48dr-ffvg1517-2-e
+set_property target_language VHDL [current_project]
+
+# Set IP repository paths 
+set_property ip_repo_paths $iprepo_dir [current_project]
+update_ip_catalog
+
+# Add constraints 
+add_files -fileset constrs_1 -norecurse /media/observer/SHIRE/rfsoc4x2_projects/final_firmware/lfsr32x8_1228.8MHz_3.6864GHz_pps_128bits_dacA/rfsoc_radio/boards/RFSoC4x2/rfsoc_radio/constraints.xdc
+
+# Make block design 
+source ./${design_name}.tcl

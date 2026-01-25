@@ -1,0 +1,19 @@
+This is 32x8-LFSR design with 1228.8MHz broadband and Fs=3.6864GHz; Fref=409.6MHz
+DAC -- Fs 3.6864GHz Fabric clock 307.2MHz dac_clock_out 230.4MHz 
+
+Transmitter IP -- V23_0 is used (128 bits)
+
+-- Adder tree for the addition of all LFSRs changed with same delays at every stage of pipeline
+Reinterpret blocks after first concat block removed as they were redundant ones
+-- Added extra pipelining in AddSub blocks in transmitter IP - "as=32"
+-- Added delay on PPS net to start PPS little late - "d=64"
+
+-- PPS given to reset the signal ; pps given to comparator input AJ13
+
+-- rfdc is taking ref_clk (for both adc and dac) of 409.6MHz which makes Fs= 3.6864GHz and giving clk_dac_out = 230.4MHz option and required axi stream clock at 307.2MHz (clocking wizard derivation) with WNS +0.706ns and TNS 0.000ns (failed routes 0); WHS 0.010ns and THS 0.000ns
+
+-- ONLY TRANSMITTER CHAIN IN THIS FIRMWARE -- 
+
+-- reported total on-chip power 13.464W -- Reported junction temp 36.3°C
+
+""" design verified on the board """
