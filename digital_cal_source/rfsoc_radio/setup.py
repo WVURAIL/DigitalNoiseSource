@@ -1,7 +1,3 @@
-## Adapted from the StrathSDR group at the University of Strathclyde
-## Modified by Kalyani Bhopi, West Virginia University 
-## Support at -- "https://github.com/WVURAIL/Digital_Noise_Source"
-
 import os
 import shutil
 from distutils.dir_util import copy_tree

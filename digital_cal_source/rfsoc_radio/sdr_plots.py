@@ -2,10 +2,6 @@ __author__ = "David Northcote"
 __organisation__ = "The Univeristy of Strathclyde"
 __support__ = "https://github.com/strath-sdr/rfsoc_radio"
 
-## Adapted from the StrathSDR group at the University of Strathclyde
-## Modified by Kalyani Bhopi, West Virginia University 
-## Support at -- "https://github.com/WVURAIL/Digital_Noise_Source"
-
 import numpy as np
 import plotly.graph_objs as go
 import ipywidgets as ipw
