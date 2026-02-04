@@ -6,8 +6,7 @@ Regenerating Vivado project from .tcl file
 
 3. Open Vivado 2020.2 (run as administrator -> good practice); open make_block_design.tcl file to make changes for path of constraints.xdc file --
 Make following changes to the line --
-# Add constraints 
-add_files -fileset constrs_1 -norecurse constraints.xdc
+add_files -fileset constrs_1 -norecurse constraints.xdc 
 
 4. In tcl console change the directory to the one where your .tcl file is saved (file name: make_block_design.tcl); make sure make_block_design.tcl and rfsoc_radio.tcl are saved in same directory as first uses the other to recreate the whole project. 
 $cd file_path/file_name 
