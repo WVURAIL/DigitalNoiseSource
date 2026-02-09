@@ -1,6 +1,13 @@
+# Originally written by --
 __author__ = "David Northcote"
 __organisation__ = "The Univeristy of Strathclyde"
 __support__ = "https://github.com/strath-sdr/rfsoc_radio"
+
+#------------------------------------#
+# Modified by Kalyani Bhopi, WVU
+# Project -- Digital Calibration Source for 21 cm Cosmology Telescopes
+# Project available at -- "https://github.com/WVURAIL/Digital_Noise_Source/tree/main/digital_cal_source"
+#------------------------------------#
 
 from pynq import DefaultIP
 
