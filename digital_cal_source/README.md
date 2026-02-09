@@ -1,14 +1,21 @@
 ## RFSoC Digital Calibration Source 
 This repository is compatible with following versions of pynq images, design softwares and boards: 
+
 PYNQ image v2.7 (https://www.pynq.io/boards.html)
+
 Vivado 2020.2 
+
 MATLAB R2020a 
+
 RFSoC4x2 (https://www.rfsoc-pynq.io)
 
 NOTE:: 
 You should make sure you are using the supported version of Vivado for the respective PYNQ release which can be found below. 
+
 System Generator is tightly version‑locked to specific MATLAB and Vivado releases; if you move to a newer MATLAB, you usually also need the matching System Generator release and a supported Vivado version; mixing arbitrary newer versions can lead to “version not supported” errors. 
+
 Downgrading versions is not supported, only older --> newer is expected to work. 
+
 The main risk is IP cores --> IP may get upgraded, change behavior, or be deprecated, so you must re-validate synthesis/implementation after migration. 
 
 Here’s a table of the recommended Vivado versions for common PYNQ releases (for building overlays/bitstreams that match each SD image):
