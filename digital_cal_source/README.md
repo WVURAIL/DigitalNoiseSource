@@ -84,11 +84,13 @@ add_files -fileset constrs_1 -norecurse constraints.xdc
  ## Programming the board
 Follow the instructions to upload corresponding project files to SD card:
 
--- Make sure SD card flased with PYNQ image v2.7 is inserted in the card slot and boot switch toggled to "SD" mode which makes sure board will be booted using SD card and not JTAG. 
+-- Make sure SD card flashed with PYNQ image v2.7 is inserted in the card slot and boot switch toggled to "SD" mode which makes sure board will be booted using SD card and not JTAG. 
 
 -- Power on your RFSoC board. 
 
--- Navigate to Jupyter Labs by opening a browser (preferably Chrome) and connecting to 'http://<board_ip_address>:9090/lab'
+-- Navigate to Jupyter Labs by opening a browser (preferably Chrome) and connecting to 
+'''bash
+http://<board_ip_address>:9090/lab
 
 -- Make new directory and upload following files to it: 
 1. .bit file 
