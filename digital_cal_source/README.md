@@ -1,7 +1,7 @@
 ## RFSoC Digital Calibration Source 
 This repository is compatible with following versions of pynq images, design softwares and boards: 
 
-[PYNQ image v2.7](https://www.pynq.io/boards.html) {Download version 2.7 for rfsoc4x2}
+[PYNQ image v2.7](https://www.pynq.io/boards.html)
 
 [Vivado 2020.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html)
 
@@ -34,21 +34,22 @@ For this project, we target **PYNQ v2.7**, so all hardware should be built with 
 SD card image for this board/project --> <Copy the image from card, upload it repo and redirect from here>
 
 ## About this project 
-This repository contains design for Gaussian Noise Transmitter which transmits 1228.8MHz wide Gaussian noise that is sampled at 3.6864GHz, defining nyquist boundary at 1.8432GHz and Carrier frequency (Fc) = 900MHz targeting observing band ~300-1500MHz. Dac tile 229 (port DAC A) is in use for broadcasting the signal from the board. The firmware is designed to use external 10MHz timing reference. 
+This repository contains design for Gaussian Noise Transmitter which transmits 1228.8MHz wide Gaussian noise that is sampled at 3.6864GHz, defining nyquist boundary at 1.8432GHz and Carrier frequency (Fc) = 900MHz targeting observing band ~300-1500MHz. DAC tile 229 (port DAC A) is in use for broadcasting the signal from the board. The firmware is designed to use external 10MHz timing reference. 
 
 Rest of the firmware specific details are given in the python notebook written to program the board: [dns_notebook](https://github.com/WVURAIL/Digital_Noise_Source/blob/main/digital_cal_source/notebooks/dns_notebook.ipynb)
 
-The run-time parameter reconfiguration is possible for following through same notebook code:
+The run-time parameter reconfiguration is possible for the following parameters through same notebook code:
 
-1. Carrier Frequency 
+1. Carrier Frequency (Default=900MHz)
 
-2. Read/write DAC power output (allowed range: 2.4-40.5mA)
+2. Read/write DAC power output (allowed range: 2.4-40.5mA) (Default=20mA)
 
 3. DAC tile startup/shutdown
 
 4. Reading on-chip temperatures and voltages
 
 5. Set LMK04828 and LMX2594 clock synthesizers frequency output (Make sure respective clock config file (.text) exists in <xrfclk> directory on-board; otherwise it would break the board and need to reboot it again to load default clock config files)
+(Default=LMK=245.76MHz, LMX=409.6MHz)
 
 ## Regenerating Vivado project from .tcl file 
 
@@ -66,7 +67,7 @@ $cd file_path/file_name
 5. Now source the .tcl file: 
 $source make_block_design.tcl 
 
-This should regenerate the whole project! 
+**This should regenerate the whole project!**
 
 6. Once the project and block design gets generated, create HDL wrapper by right-clicking rfsoc_radio.bd in Design Sources in Sources window. This makes newly created rfsoc_radio_wrapper your top module for further synthesis, implementation and creating bitstream files.
  
