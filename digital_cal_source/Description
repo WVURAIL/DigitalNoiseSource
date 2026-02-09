@@ -13,4 +13,4 @@ Reinterpret blocks after first concat block removed as they were redundant ones
 
 -- reported total on-chip power 13.464W -- Reported junction temp 36.3°C
 
-""" design to be verified on the board """
+""" design verified on the board """
