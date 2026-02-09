@@ -36,7 +36,7 @@ SD card image for this board/project --> <Copy the image from card, upload it re
 ## About this project 
 This repository contains design for Gaussian Noise Transmitter which transmits 1228.8MHz wide Gaussian noise that is sampled at 3.6864GHz, defining nyquist boundary at 1.8432GHz and Carrier frequency (Fc) = 900MHz targeting observing band ~300-1500MHz. Dac tile 229 (port DAC A) is in use for broadcasting the signal from the board. The firmware is designed to use external 10MHz timing reference. 
 
-Rest of the firmware specific details are given in the python notebook written to program the board: <digital_cal_source/notebooks/dns_notebook.ipynb>
+Rest of the firmware specific details are given in the python notebook written to program the board: [dns_notebook](https://github.com/WVURAIL/Digital_Noise_Source/blob/main/digital_cal_source/notebooks/dns_notebook.ipynb)
 
 The run-time parameter reconfiguration is possible for following through same notebook code:
 
