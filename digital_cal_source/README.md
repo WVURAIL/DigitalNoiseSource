@@ -50,11 +50,10 @@ The run-time parameter reconfiguration is possible for the following parameters 
 
 4. Reading on-chip temperatures and voltages
 
-5. Set LMK04828 and LMX2594 clock synthesizers frequency output (Make sure respective clock config file (.text) exists in <xrfclk> directory on-board; otherwise it would break the board and need to reboot it again to load default clock config files)
+5. Set LMK04828 and LMX2594 clock synthesizers frequency output (Make sure respective clock config file (.text) exists in "xrfclk" directory on-board; otherwise it would break the board and need to reboot it again to load default clock config files)
 (Default=LMK=245.76MHz, LMX=409.6MHz)
 
-Addition to make: 
-<Add snippet of DNS notebook> 
+Addition to make: "Add snippet of DNS notebook" 
 
 ## Regenerating Vivado project from .tcl file 
 
@@ -62,15 +61,20 @@ Addition to make:
 
 2. Clone the repository on your local machine. 
 
-3. Open Vivado 2020.2 (run as administrator -> good practice); open make_block_design.tcl file to make changes for path of constraints.xdc file --
+3. Open Vivado 2020.2 (run as administrator -> good practice); open make_block_design.tcl file to make changes for path of constraints.
+xdc file --
+
 Make following changes to the line --
+
 add_files -fileset constrs_1 -norecurse constraints.xdc 
 
 4. In tcl console change the directory to the one where your .tcl file is saved (file name: make_block_design.tcl); make sure make_block_design.tcl and rfsoc_radio.tcl are saved in same directory as first uses the other to recreate the whole project. 
-$cd file_path/file_name 
+
+'$cd file_path/file_name'
 
 5. Now source the .tcl file: 
-$source make_block_design.tcl 
+
+'$source make_block_design.tcl'
 
 **This should regenerate the whole project!**
 
@@ -84,7 +88,7 @@ Follow the instructions to upload corresponding project files to SD card:
 
 -- Power on your RFSoC board. 
 
--- Navigate to Jupyter Labs by opening a browser (preferably Chrome) and connecting to http://<board_ip_address>:9090/lab
+-- Navigate to Jupyter Labs by opening a browser (preferably Chrome) and connecting to 'http://<board_ip_address>:9090/lab'
 
 -- Make new directory and upload following files to it: 
 1. .bit file 
