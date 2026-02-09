@@ -7,6 +7,8 @@ This repository is compatible with following versions of pynq images, design sof
 
 [MATLAB R2020a](https://www.mathworks.com/downloads)
 
+System Generator for DSP ([MATLAB R2020a](https://www.mathworks.com/downloads) with [Vivado Design Suite 2020.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html))
+
 [RFSoC4x2](https://www.rfsoc-pynq.io)
 
 NOTE:: 
@@ -51,6 +53,9 @@ The run-time parameter reconfiguration is possible for the following parameters 
 5. Set LMK04828 and LMX2594 clock synthesizers frequency output (Make sure respective clock config file (.text) exists in <xrfclk> directory on-board; otherwise it would break the board and need to reboot it again to load default clock config files)
 (Default=LMK=245.76MHz, LMX=409.6MHz)
 
+Addition to make: 
+<Add snippet of DNS notebook> 
+
 ## Regenerating Vivado project from .tcl file 
 
 1. Browse to https://github.com/WVURAIL/Digital_Noise_Source/digital_cal_source 
@@ -69,5 +74,28 @@ $source make_block_design.tcl
 
 **This should regenerate the whole project!**
 
-6. Once the project and block design gets generated, create HDL wrapper by right-clicking rfsoc_radio.bd in Design Sources in Sources window. This makes newly created rfsoc_radio_wrapper your top module for further synthesis, implementation and creating bitstream files.
+6. Once the project and block design gets generated, create HDL wrapper by right-clicking rfsoc_radio.bd in Design Sources in Sources window. This makes newly created rfsoc_radio_wrapper your top module for further synthesis, implementation and creating bitstream (.bit) and hardware definition (.hwh) files.
  
+
+ ## Programming the board
+Follow the instructions to upload corresponding project files to SD card:
+
+-- Make sure SD card flased with PYNQ image v2.7 is inserted in the card slot and boot switch toggled to "SD" mode which makes sure board will be booted using SD card and not JTAG. 
+
+-- Power on your RFSoC board. 
+
+-- Navigate to Jupyter Labs by opening a browser (preferably Chrome) and connecting to http://<board_ip_address>:9090/lab
+
+-- Make new directory and upload following files to it: 
+1. .bit file 
+2. .hwh file 
+3. dns_notebook (you can also write your own)
+bitstream and hardware definition files for this project are also available [here](https://github.com/WVURAIL/Digital_Noise_Source/tree/main/digital_cal_source/bitstream_files)
+
+-- Make subdirectory for overlay files: and add all the files from [here](https://github.com/WVURAIL/Digital_Noise_Source/tree/main/digital_cal_source/rfsoc_radio)
+
+-- Once done and all files are on-board, run code cell in [dns_notebook](https://github.com/WVURAIL/Digital_Noise_Source/blob/main/digital_cal_source/notebooks/dns_notebook.ipynb) -->
+<Provide snippet of the code>
+
+
+
