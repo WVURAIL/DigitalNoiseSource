@@ -1,13 +1,13 @@
 ## RFSoC Digital Calibration Source 
 This repository is compatible with following versions of pynq images, design softwares and boards: 
 
-PYNQ image v2.7 (https://www.pynq.io/boards.html)
+[PYNQ image v2.7](https://www.pynq.io/boards.html)
 
-Vivado 2020.2 
+[Vivado 2020.2](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html)
 
-MATLAB R2020a 
+[MATLAB R2020a](https://www.mathworks.com/downloads)
 
-RFSoC4x2 (https://www.rfsoc-pynq.io)
+[RFSoC4x2](https://www.rfsoc-pynq.io)
 
 NOTE:: 
 You should make sure you are using the supported version of Vivado for the respective PYNQ release which can be found below. 
@@ -31,7 +31,7 @@ Here’s a table of the recommended Vivado versions for common PYNQ releases (fo
 
 For this project, we target **PYNQ v2.7**, so all hardware should be built with **Vivado 2020.2**; avoid significantly newer versions unless you are willing to set **ignore_version=True** in overlay.py and debug potential IP mismatches.
 
-SD card image for this board --> <Copy the image from card, upload it repo and redirect from here>
+SD card image for this board/project --> <Copy the image from card, upload it repo and redirect from here>
 
 
 ## Regenerating Vivado project from .tcl file 
