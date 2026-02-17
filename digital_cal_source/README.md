@@ -100,6 +100,3 @@ bitstream and hardware definition files for this project are also available [her
 
 -- Once done and all files are on-board, run code cell in [dns_notebook](https://github.com/WVURAIL/Digital_Noise_Source/blob/main/digital_cal_source/notebooks/dns_notebook.ipynb) -->
 <Provide snippet of the code>
-
-
-
