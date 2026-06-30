@@ -1,0 +1,17 @@
+This is 32x8-LFSR design with 1228.8MHz broadband and Fs=4.9152GHz; Fref=491.52MHz
+
+-- Tx v22 IP is used in the design -- 128 bit data width (4I and 4Q) 
+--gaussian continuous noise sent -- 256 LFSRs (32x8) for each I and Q component
+
+-- Adder tree for the addition of all LFSRs changed with same delays at every stage of pipeline
+-- PPS given to reset the signal ; pps given to comparator input AJ13
+-- delay added (as=16) in AddSub blocks in tx module 
+
+-- rfdc is taking ref_clk (for both adc and dac) of 491.52MHz which makes Fs= 4.9152GHz and giving clk_dac_out = 153.6MHz option and required axi stream clock at 307.2MHz (using clocking wizard derivation) with WNS +2.780ns and TNS 0.000ns (failed routes 0); WHS +0.010ns THS 0.000ns; WPWS 0.127ns TPWS 0.000ns
+TOTAL BW OF 307.2X4=1228.8MHZ 
+
+
+
+-- total power 11.136W and dac power output 20mA -- Tj = 34.4°C 
+
+""" design to be verified on the board """
