@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Vivado / Vitis build output
+.Xil/
+*.jou
+*.str
+vivado*.log
+vivado*.backup*
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+
+# *.bit and *.hwh are tracked on purpose: PYNQ overlays need the bitstream and
+# its hardware handoff present at runtime.
