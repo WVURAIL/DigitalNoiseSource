@@ -62,18 +62,7 @@ This repository accompanies https://arxiv.org/abs/2604.09859. The `data_analysis
 
 ## Installation / dependencies
 
-python: 3.9.10
-numpy: 1.22.4
-scipy: 1.13.1
-pandas: 2.1.1
-matplotlib: 3.5.1
-h5py: 3.8.0
-allantools: 2024.04
-scikit-rf: 1.1.0
-psutil: 5.9.6
-pytz: 2023.3.post1
-PyYAML: 6.0.1
-pygeodesy: 25.12.31
+python: 3.9.10 | numpy: 1.22.4 | scipy: 1.13.1 | pandas: 2.1.1 | matplotlib: 3.5.1 | h5py: 3.8.0 | allantools: 2024.04 | scikit-rf: 1.1.0 | psutil: 5.9.6 | pytz: 2023.3.post1 | PyYAML: 6.0.1 | pygeodesy: 25.12.31
 
 Some scripts depend on internal modules also in this repo (`rawice.py`, `time_utils.py`)  — no separate installation needed, just ensure they're on your `PYTHONPATH` or run notebooks from the repo root.
 
@@ -84,6 +73,7 @@ If you use this code, please cite: [paper citation — placeholder until publish
 ## License
 
 BSD-3-clause — see [LICENSE](LICENSE). 
+
 Note: portions of the correlator scripts are third-party in origin — see "External code / attribution" above.
 
 
