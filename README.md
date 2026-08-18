@@ -6,7 +6,9 @@ This repository accompanies https://arxiv.org/abs/2604.09859. The `data_analysis
 
 ## Repository structure 
 
-- 'digital_cal_source/' -- PEACC firmware, board bring-up, hardware docs. See its own README.
+- `digital_cal_source/` — PEACC firmware, board bring-up, and hardware documentation. 
+  **See the [README in that directory](digital_cal_source/README.md) for firmware-specific 
+  build, programming, and dependency instructions.**
 - `data_analysis_notebooks/` — data handling and analysis scripts, described below.
 - `Zynq_ultrascale+_rfsoc/boards/` — Previously developed firmware files for lower bandwidth noise 
 - `Images/` — supporting figures/diagrams
@@ -81,7 +83,7 @@ If you use this code, please cite: [paper citation — placeholder until publish
 
 ## License
 
-BSD-clause 3 — see [LICENSE](LICENSE). 
+BSD-3-clause — see [LICENSE](LICENSE). 
 Note: portions of the correlator scripts are third-party in origin — see "External code / attribution" above.
 
 
