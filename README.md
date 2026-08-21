@@ -2,7 +2,7 @@
 
 Firmware and analysis code for the PEACC digital noise source, developed for drone-based and chamber-based dish beam calibration measurements at WVU and YALE. 
 
-This repository accompanies https://arxiv.org/abs/2604.09859. The `data_analysis_notebooks/` scripts reproduce the beam maps, beam amplitude recovery curves, and related figures in that paper. For firmware, board bring-up, and hardware programming instructions, **see the [README in `digital_cal_source/`](digital_cal_source/README.md)**.
+This repository accompanies [PEACC - Precision Emitter for 21 cm Array Coherent Calibration](https://arxiv.org/abs/2604.09859). The `data_analysis_notebooks/` directory contains the analysis notebooks used to produce the beam maps, beam-amplitude recovery curves, and related figures in that paper. The raw and intermediate measurement data are not bundled here; see [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the recorded environment, data availability, and execution notes. For firmware, board bring-up, and hardware programming instructions, **see the [README in `digital_cal_source/`](digital_cal_source/README.md)**.
 
 ## Repository structure 
 
@@ -62,19 +62,20 @@ This repository accompanies https://arxiv.org/abs/2604.09859. The `data_analysis
 
 ## Installation / dependencies
 
-python: 3.9.10 | numpy: 1.22.4 | scipy: 1.13.1 | pandas: 2.1.1 | matplotlib: 3.5.1 | h5py: 3.8.0 | allantools: 2024.04 | scikit-rf: 1.1.0 | psutil: 5.9.6 | pytz: 2023.3.post1 | PyYAML: 6.0.1 | pygeodesy: 25.12.31
+The recorded analysis environment is listed in [requirements-analysis.txt](requirements-analysis.txt). Additional imports whose exact versions were not recorded are clearly marked there. See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) before running the notebooks.
 
-Some scripts depend on internal modules also in this repo (`rawice.py`, `time_utils.py`)  — no separate installation needed, just ensure they're on your `PYTHONPATH` or run notebooks from the repo root.
+Some scripts depend on internal modules also in this repo (`rawice.py`, `time_utils.py`) — no separate installation is needed; ensure they are on your `PYTHONPATH` or run notebooks from the repository root. The vendored `rawice.py` source and update policy are documented in [RAWICE_PROVENANCE.md](RAWICE_PROVENANCE.md).
 
 ## Citation
 
-If you use this code, please cite: [paper citation — placeholder until published]
+If you use this code, please cite K. Bhopi et al., “PEACC - Precision Emitter for 21 cm Array Coherent Calibration,” arXiv:2604.09859 (2026), [doi:10.48550/arXiv.2604.09859](https://doi.org/10.48550/arXiv.2604.09859). Machine-readable software and paper citation metadata are available in [CITATION.cff](CITATION.cff).
 
 ## License
 
-BSD-3-clause — see [LICENSE](LICENSE). 
-
-Note: portions of the correlator scripts are third-party in origin — see "External code / attribution" above.
+The repository includes a BSD-3-Clause [LICENSE](LICENSE). Third-party and
+vendored files may have separate terms; the vendored `rawice.py` is covered by
+[its MIT license](LICENSE.rawice). See "External code / attribution" above and
+the [`rawice.py` provenance record](RAWICE_PROVENANCE.md#license).
 
 
 

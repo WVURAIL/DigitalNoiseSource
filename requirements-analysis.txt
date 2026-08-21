@@ -1,0 +1,27 @@
+# Recorded analysis runtime: Python 3.9.10
+# Exact package versions recorded by the project:
+numpy==1.22.4
+scipy==1.13.1
+pandas==2.1.1
+matplotlib==3.5.1
+h5py==3.8.0
+allantools==2024.04
+scikit-rf==1.1.0
+psutil==5.9.6
+pytz==2023.3.post1
+PyYAML==6.0.1
+pygeodesy==25.12.31
+
+# Additional imported packages and notebook runtime tools whose exact versions
+# were not recorded:
+astropy
+baseband
+ipython
+jupyterlab
+Pillow
+wfdb
+
+# Local modules rawice.py and time_utils.py are included in this repository.
+# pocket_correlator/pychfpga is also required by correlator examples, but its
+# distribution source and version were not recorded, so no install target is
+# asserted here.
