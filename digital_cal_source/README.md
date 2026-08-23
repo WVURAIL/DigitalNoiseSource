@@ -33,12 +33,12 @@ Here’s a table of the recommended Vivado versions for common PYNQ releases (fo
 
 For this project, we target **PYNQ v2.7**, so all hardware should be built with **Vivado 2020.2**; avoid significantly newer versions unless you are willing to set **ignore_version=True** in overlay.py and debug potential IP mismatches.
 
-SD card image for this board/project --> <Copy the image from card, upload it repo and redirect from here>
+Use the RFSoC4x2 PYNQ v2.7 SD-card image linked in the compatibility section above. The image is not stored in this repository.
 
 ## About this project 
 This repository contains design for Gaussian Noise Transmitter which transmits 1228.8MHz wide Gaussian noise that is sampled at 3.6864GHz, defining nyquist boundary at 1.8432GHz and Carrier frequency (Fc) = 900MHz targeting observing band ~300-1500MHz. DAC tile 229 (port DAC A) is in use for broadcasting the signal from the board. The firmware is designed to use external 10MHz timing reference. 
 
-Rest of the firmware specific details are given in the python notebook written to program the board: [dns_notebook](https://github.com/WVURAIL/Digital_Noise_Source/blob/main/digital_cal_source/notebooks/dns_notebook.ipynb)
+The current continuous-mode board-control notebook is [final_dns_notebook](https://github.com/WVURAIL/DigitalNoiseSource/blob/main/digital_cal_source/notebooks/final_dns_notebook.ipynb). The older `dns_notebook.ipynb` and the notebook bundled under `switching_mode_firmware/` are retained for their respective legacy and switching-mode workflows.
 
 The run-time parameter reconfiguration is possible for the following parameters through same notebook code:
 
@@ -50,31 +50,28 @@ The run-time parameter reconfiguration is possible for the following parameters 
 
 4. Reading on-chip temperatures and voltages
 
-5. Set LMK04828 and LMX2594 clock synthesizers frequency output (Make sure respective clock config file (.text) exists in "xrfclk" directory on-board; otherwise it would break the board and need to reboot it again to load default clock config files)
+5. Set LMK04828 and LMX2594 clock synthesizers frequency output (make sure the respective clock configuration file (`.txt`) exists in the on-board `xrfclk` directory; otherwise reboot the board to restore its default clock configuration files)
 (Default=LMK=245.76MHz, LMX=409.6MHz)
 
-Addition to make: "Add snippet of DNS notebook" 
+The linked notebook contains the runtime-control examples for these operations.
 
 ## Regenerating Vivado project from .tcl file 
 
-1. Browse to https://github.com/WVURAIL/Digital_Noise_Source/digital_cal_source 
+1. Browse to https://github.com/WVURAIL/DigitalNoiseSource/tree/main/digital_cal_source and clone the repository on your local machine.
 
-2. Clone the repository on your local machine. 
+2. Open `digital_cal_source/boards/RFSoC4x2/rfsoc_radio/`, which contains `make_block_design.tcl`, `rfsoc_radio.tcl`, and `constraints.xdc`.
 
-3. Open Vivado 2020.2 (run as administrator -> good practice); open make_block_design.tcl file to make changes for path of constraints.
-xdc file --
+3. Open Vivado 2020.2 and inspect the constraints-file command in `make_block_design.tcl`. Replace its checked-in machine-specific path so it resolves to the adjacent `constraints.xdc` file:
 
-Make following changes to the line --
+`add_files -fileset constrs_1 -norecurse constraints.xdc`
 
-add_files -fileset constrs_1 -norecurse constraints.xdc 
+4. In the Tcl console, change to the directory containing `make_block_design.tcl`; keep `make_block_design.tcl`, `rfsoc_radio.tcl`, and `constraints.xdc` together because the first script uses the other two files to recreate the project.
 
-4. In tcl console change the directory to the one where your .tcl file is saved (file name: make_block_design.tcl); make sure make_block_design.tcl and rfsoc_radio.tcl are saved in same directory as first uses the other to recreate the whole project. 
+`cd file_path`
 
-'$cd file_path/file_name'
+5. Source the Tcl file:
 
-5. Now source the .tcl file: 
-
-'$source make_block_design.tcl'
+`source make_block_design.tcl`
 
 **This should regenerate the whole project!**
 
@@ -94,9 +91,8 @@ Follow the instructions to upload corresponding project files to SD card:
 1. .bit file 
 2. .hwh file 
 3. dns_notebook (you can also write your own)
-bitstream and hardware definition files for this project are also available [here](https://github.com/WVURAIL/Digital_Noise_Source/tree/main/digital_cal_source/bitstream_files)
+Bitstream and hardware definition files for this project are also available [here](https://github.com/WVURAIL/DigitalNoiseSource/tree/main/digital_cal_source/bitstream_files).
 
--- Make subdirectory for overlay files: and add all the files from [here](https://github.com/WVURAIL/Digital_Noise_Source/tree/main/digital_cal_source/rfsoc_radio)
+-- Make a subdirectory for the overlay files and add all files from [here](https://github.com/WVURAIL/DigitalNoiseSource/tree/main/digital_cal_source/rfsoc_radio).
 
--- Once done and all files are on-board, run code cell in [dns_notebook](https://github.com/WVURAIL/Digital_Noise_Source/blob/main/digital_cal_source/notebooks/dns_notebook.ipynb) -->
-<Provide snippet of the code>
+-- Once all files are on the board, open the [current continuous-mode notebook](https://github.com/WVURAIL/DigitalNoiseSource/blob/main/digital_cal_source/notebooks/final_dns_notebook.ipynb). Before running it, update the `bitfile_name` argument so it points to the uploaded `.bit` file. For switching-mode firmware, use the notebook bundled in the corresponding `bitstream_files/switching_mode_firmware/` directory.

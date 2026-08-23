@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the PEACC paper and this software release."
+title: "DigitalNoiseSource: PEACC firmware and analysis code"
+type: software
+version: 1.0.0
+date-released: "2026-08-20"
+repository-code: "https://github.com/WVURAIL/DigitalNoiseSource"
+url: "https://github.com/WVURAIL/DigitalNoiseSource/releases/tag/peacc_v1.0.0"
+authors:
+  - family-names: Bhopi
+    given-names: Kalyani
+  - family-names: Bandura
+    given-names: Kevin
+keywords:
+  - 21 cm cosmology
+  - beam calibration
+  - digital noise source
+  - PEACC
+  - RFSoC
+preferred-citation:
+  type: article
+  status: preprint
+  title: "PEACC - Precision Emitter for 21 cm Array Coherent Calibration"
+  authors:
+    - family-names: Bhopi
+      given-names: Kalyani
+    - family-names: Cole
+      given-names: Morgan
+    - family-names: Helfenbein
+      given-names: Mallory
+    - family-names: Tyndall
+      given-names: Will
+    - family-names: Whitmer
+      given-names: Audrey
+    - family-names: Bandura
+      given-names: Kevin
+    - family-names: Newburgh
+      given-names: Laura
+  year: 2026
+  doi: "10.48550/arXiv.2604.09859"
+  url: "https://arxiv.org/abs/2604.09859"
