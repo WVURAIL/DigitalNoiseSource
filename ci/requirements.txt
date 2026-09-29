@@ -1,0 +1,5 @@
+# Validation tools only; the recorded analysis environment is maintained separately.
+nbformat>=5.10,<6
+numpy>=1.26,<3
+scipy>=1.13,<2
+pandas>=2.1,<3

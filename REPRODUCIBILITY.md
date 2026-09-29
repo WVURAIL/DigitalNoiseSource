@@ -42,3 +42,24 @@ The analysis environment above is separate from RFSoC board operation. The suppo
 ## Vendored source
 
 `data_analysis_notebooks/rawice.py` is pinned to an exact upstream revision. Its source, byte-level comparison, and reviewed update policy are documented in [RAWICE_PROVENANCE.md](RAWICE_PROVENANCE.md).
+
+## Hardware-free checks
+
+For repository maintenance, use Python 3.12 in a separate virtual environment:
+
+```sh
+python -m pip install -r ci/requirements.txt
+python -m unittest discover -s tests -v
+```
+
+These checks validate notebook schemas without executing cells, parse the current
+analysis helpers and `digital_cal_source/rfsoc_radio` Python sources, and test the
+time utilities with synthetic pulse and timestamp data. Legacy board/bitstream
+Python copies are outside the syntax-check scope. Older notebook cell IDs are
+accepted without rewriting the saved research records.
+
+The checks do not acquire data, program hardware, synthesize firmware, or rerun
+the paper's measurements and figures. Notebook execution still requires the
+external data and environment above. Weekly dependency updates cover Actions and
+`ci/requirements.txt`; the recorded analysis environment and pinned vendored
+source remain subject to deliberate review.
