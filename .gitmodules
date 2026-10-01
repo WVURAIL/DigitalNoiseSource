@@ -1,0 +1,3 @@
+[submodule "Zynq_ultrascale+_rfsoc/boards/RFSoC4x2/lfsr256_122.88MHz_1.966GHz_pps/rfsoc_radio"]
+	path = Zynq_ultrascale+_rfsoc/boards/RFSoC4x2/lfsr256_122.88MHz_1.966GHz_pps/rfsoc_radio
+	url = https://github.com/strath-sdr/rfsoc_radio.git
